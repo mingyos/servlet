@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/lesson01/quiz08")
 
 public class GetMethodQuiz08 extends HttpServlet {
-
+	
+	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setCharacterEncoding("utf-8");
@@ -28,7 +29,7 @@ public class GetMethodQuiz08 extends HttpServlet {
 		
 		
 		List<String> list = new ArrayList<>(Arrays.asList(
-		        "강남역 최고 맛집 소개 합니다.", 
+		        "강남역 최고 맛집은 소개 합니다.", 
 		        "오늘 기분 좋은 일이 있었네요.", 
 		        "역시 맛집 데이트가 제일 좋네요.", 
 		        "집에 가는 길에 동네 맛집 가서 안주 사갑니다.",
@@ -41,6 +42,8 @@ public class GetMethodQuiz08 extends HttpServlet {
 		while(iterator.hasNext()) {
 			String str = iterator.next();
 			if(str.contains(search)) {
+//				str = str.replace(search, "<b>" + search + "</b>");
+//				out.print(str + "<br>");
 				String[] strout = str.split(" ");
 				for (int i = 0 ; i < strout.length ; i++) {
 					if(strout[i].equals(search)) {
